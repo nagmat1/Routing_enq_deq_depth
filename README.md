@@ -20,4 +20,4 @@ sudo tc qdisc add dev enp7s0 parent 1:1 handle 10: tbf rate 1gbit buffer 160000 
 
 Then we started to see the queue build up as shown below: 
 
-file:///home/nagmat/Pictures/Screenshots/Screenshot%20from%202023-10-23%2014-35-54.png
+![Screenshot from 2023-10-23 14-35-54](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/ec4be6cb-f206-429a-b687-743d4fd15e22)
