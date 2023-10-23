@@ -14,7 +14,7 @@ will limit the traffic, but we can't see the queue build up.
 In order to the see the queue build up, limit the rate by  : 
 
 ```
-sudo tc qdisc change dev enp7s0 root handle 1:0 netem delay 1ms
+sudo tc qdisc add dev enp7s0 root handle 1:0 netem delay 1ms
 sudo tc qdisc add dev enp7s0 parent 1:1 handle 10: tbf rate 1gbit buffer 160000 limit 300000
 ```
 
