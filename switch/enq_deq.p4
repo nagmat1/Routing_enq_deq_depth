@@ -1,4 +1,4 @@
-enii/* -*- P4_16 -*- */
+/* -*- P4_16 -*- */
 #include <core.p4>
 #include <v1model.p4>
 
@@ -33,7 +33,6 @@ header ipv4_t {
     ip4Addr_t srcAddr;
     ip4Addr_t dstAddr;
 }
-
 
 header metadata_t {
     bit<32> enq_timestamp;
@@ -105,7 +104,7 @@ control MyIngress(inout headers hdr,
     action drop() {
         mark_to_drop(standard_metadata);
     }
-
+    
      action forward(macAddr_t dstAddr, egressSpec_t port) {
         //set the src mac address as the previous dst
         hdr.ethernet.srcAddr = hdr.ethernet.dstAddr;
@@ -131,7 +130,7 @@ control MyIngress(inout headers hdr,
         size = 1024;
         default_action = drop;
     }
-
+    
     apply {
         if(hdr.ipv4.isValid()) {
             ipv4_lpm.apply();
@@ -146,16 +145,17 @@ control MyIngress(inout headers hdr,
 control MyEgress(inout headers hdr,
                  inout metadata meta,
                  inout standard_metadata_t standard_metadata) {
-    apply {
-    if ((hdr.ipv4.protocol != 0x01) && (hdr.ipv4.protocol != 0x06)) 
+    apply { 
+
+ if ((hdr.ipv4.protocol != 0x01) && (hdr.ipv4.protocol != 0x6) && (hdr.ipv4.protocol!= 0x11))
     {
            hdr.my_meta.setValid();
-           hdr.my_meta.enq_timestamp = standard_metadata.enq_timestamp; // 0xA; 
-           hdr.my_meta.enq_qdepth = (bit<32>) standard_metadata.enq_qdepth; // 0xB; 
-           hdr.my_meta.deq_timedelta = standard_metadata.deq_timedelta; // 0xC; 
-           hdr.my_meta.deq_qdepth = (bit<32>) standard_metadata.deq_qdepth; //0xD;
+           hdr.my_meta.enq_timestamp = standard_metadata.enq_timestamp; 
+           hdr.my_meta.enq_qdepth = (bit<32>) standard_metadata.enq_qdepth; 
+           hdr.my_meta.deq_timedelta = standard_metadata.deq_timedelta; 
+           hdr.my_meta.deq_qdepth = (bit<32>) standard_metadata.deq_qdepth; 
       }
-  }
+ }
 }
 
 /*************************************************************************
@@ -170,7 +170,7 @@ control MyComputeChecksum(inout headers  hdr, inout metadata meta) {
               hdr.ipv4.ihl,
               hdr.ipv4.dscp,
               hdr.ipv4.ecn,
-              hdr.ipv4.totalLen,
+              hdr.ipv4.totalLen,              
               hdr.ipv4.identification,
               hdr.ipv4.flags,
               hdr.ipv4.fragOffset,
