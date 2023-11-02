@@ -38,3 +38,14 @@ In our experiment we make a congestion and analyze the enq_qdepth and deq_qdepth
 After each 0.05 seconds we send the probing packets. Every time when the switch receives the probing packets it resets the ```sum``` value and and ```packet_count``` value on Registers and patches the existing values onto the packet header as shown in figure below.   
 
 ![temp](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/c3ee42c4-296a-47d1-b0ba-3f544764020c)
+
+# Does the bmv2 switch support Line rate ? 
+
+In our experiments in P4 programmable (Hardware) switch we were exploring on average of 360ns per packet latency. 
+
+We tried the same experiment in our bmv2 switch. 
+
+As shown below the maximum latency of the packet that we explore is 1600 ns which is quite high, but on average we are exporing 500-600ns latency including two congestions as shown below. 
+![temp](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/5fb7e590-a376-4538-afd0-a52fa5a75f9c)
+
+
