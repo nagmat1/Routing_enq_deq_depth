@@ -21,3 +21,11 @@ sudo tc qdisc add dev enp7s0 parent 1:1 handle 10: tbf rate 1gbit buffer 160000 
 Then we started to see the queue build up as shown below: 
 
 ![Screenshot from 2023-10-23 14-35-54](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/ec4be6cb-f206-429a-b687-743d4fd15e22)
+
+# Average Enq_qdepth and deqqdepth for 2 cases with congestion 
+
+In our experiment we make a congestion and analyze the enq_qdepth and deq_qdepth while the switch is congested. 
+
+After each 0.05 seconds we send the probing packets. Every time when the switch receives the probing packets it resets the ```sum``` value and and ```packet_count``` value on Registers and patches the existing values onto the packet header as shown in figure below.   
+
+![temp](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/c3ee42c4-296a-47d1-b0ba-3f544764020c)
