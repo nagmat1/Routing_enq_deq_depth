@@ -1,5 +1,14 @@
 # Routing_enq_deq_depth
-Routing enqueue dequeue depth fabric program
+
+Routing enqueue and dequeue depth on fabric testbed platform. 
+
+# Architecture 
+
+We are using server from WASH and UCSD for server1 and server2. 
+Our server at DALL is functioning as a bmv2 programmable switch with 2 Basic NICs. These three sites are connected by physical connections as shown in figure below : 
+
+![Screenshot from 2023-11-02 10-13-26](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/4c91d231-6d49-49e2-857f-6b52574afb82)
+
 
 # Limiting the rate to build up the queue : 
 
