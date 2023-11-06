@@ -50,4 +50,10 @@ As shown below the maximum latency of the packet that we explore is 1600 ns whic
 
 ![temp](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/5fb7e590-a376-4538-afd0-a52fa5a75f9c)
 
+# Min, Max enq depth graph. 
+
+In order to analyze the discrepancies in our graph I decided to plot the maximum and the minimum of the enq_qdepth. 
+
+![temp](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/de41d948-b80e-40a9-8ff6-5a92ca016d57)
+
 
