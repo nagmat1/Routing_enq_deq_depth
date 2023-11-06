@@ -56,4 +56,4 @@ In order to analyze the discrepancies in our graph I decided to plot the maximum
 
 ![temp](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/de41d948-b80e-40a9-8ff6-5a92ca016d57)
 
-
+The main question in the graph is : Why we don't explore 64 packets maximum in the second congestion? 
