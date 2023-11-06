@@ -34,9 +34,8 @@ def main():
     for i in range(1000000):
         #pkt.show2()
         sendp(pkt, iface=iface)
-        time.sleep(0.5)
+        time.sleep(0.005)
 
 
 if __name__ == '__main__':
     main()
-
