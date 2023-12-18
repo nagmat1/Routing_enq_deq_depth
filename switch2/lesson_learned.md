@@ -33,3 +33,12 @@ sudo arp -s 192.168.1.1 00:00:00:00:00:02
 sudo arp -s 192.168.2.1 00:00:00:00:00:03 
 ```
 
+Need to execute on switch 2 : 
+```
+sudo ifconfig enp7s0 hw ether 00:00:00:00:00:04
+```
+
+On switch1 : 
+```
+
+```
