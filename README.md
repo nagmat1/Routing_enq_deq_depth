@@ -31,7 +31,7 @@ Then we started to see the queue build up as shown below:
 
 ![Screenshot from 2023-10-23 14-35-54](https://github.com/nagmat1/Routing_enq_deq_depth/assets/51871069/ec4be6cb-f206-429a-b687-743d4fd15e22)
 
-# Average Enq_qdepth and deqqdepth for 2 cases with congestion 
+# Average Enq_qdepth and Deq_qdepth for 2 cases with congestion 
 
 In our experiment we make a congestion and analyze the enq_qdepth and deq_qdepth while the switch is congested. 
 
